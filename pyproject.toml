@@ -1,0 +1,44 @@
+[project]
+name = "app"
+version = "0.0.1"
+description = "Minimal reproducible test app"
+#readme = "README.rst"
+requires-python = ">=3.6"
+#license = {file = "LICENSE.txt"}
+keywords = ["test"]
+authors = [
+    {email = "antoman1994@gmail.com"},
+    {name = "Anton Horodchuk"}
+]
+maintainers = [
+    {name = "Anton Horodchuk", email = "antoman1994@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python"
+]
+
+dependencies = [
+
+]
+
+[project.optional-dependencies]
+test = [
+    "tox==3.25.0",
+    "pytest==7.1.2",
+#    "pre-commit",
+#    "bump2version"
+]
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core"]
+
+[project.urls]
+homepage = "example.com"
+documentation = "readthedocs.org"
+repository = "github.com"
+#changelog = "github.com/me/spam/blob/master/CHANGELOG.md"
+
+[project.scripts]
+app-cli = "app:main"
