@@ -29,6 +29,9 @@ test = [
 #    "pre-commit",
 #    "bump2version"
 ]
+dev = [
+    "setuptools==62.2.0",
+]
 
 [build-system]
 build-backend = "flit_core.buildapi"

@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: ../.
+      dockerfile: docker/Dockerfile
+      target: production
+
+  dev:
+    build:
+      context: ../.
+      dockerfile: docker/Dockerfile
+      target: dev
+    volumes:
+      - ../:/usr/src/app
+
+  tests:
+    build:
+      context: ../.
+      dockerfile: docker/Dockerfile
+      target: tests
+    command: tox
