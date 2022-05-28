@@ -9,7 +9,7 @@ services:
   dev:
     build:
       context: ../.
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/Dockerfile.dev
       target: dev
     volumes:
       - ../:/usr/src/app
@@ -17,6 +17,15 @@ services:
   tests:
     build:
       context: ../.
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/Dockerfile.dev
       target: tests
-    command: tox
+    command: tox -p -o
+    volumes:
+      - ../:/usr/src/app
+
+  tests-ci:
+    build:
+      context: ../.
+      dockerfile: docker/Dockerfile.dev
+      target: tests
+    command: tox -p -o

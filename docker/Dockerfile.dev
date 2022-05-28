@@ -1,0 +1,13 @@
+FROM python:3.10-rc-slim AS dev
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+RUN python -m pip install --upgrade pip \
+    && pip install --no-input -q --no-cache-dir .[dev] \
+    && pip install --no-input -q --no-cache-dir -e .
+
+FROM dev AS tests
+COPY docker/entrypoint.sh /usr/bin/entrypoint
+RUN chmod +x /usr/bin/entrypoint
+RUN pip install --no-input -q .[test]
+ENTRYPOINT ["entrypoint"]
+CMD ["tox"]

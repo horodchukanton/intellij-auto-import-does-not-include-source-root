@@ -15,18 +15,17 @@ maintainers = [
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
-    "Programming Language :: Python"
+    "Programming Language :: Python",
+    "Private :: Do Not Upload"
 ]
 
-dependencies = [
-
-]
+dependencies = []
 
 [project.optional-dependencies]
 test = [
     "tox==3.25.0",
-    "pytest==7.1.2",
-#    "pre-commit",
+    "pytest==7.1.2"
+    #    "pre-commit",
 #    "bump2version"
 ]
 dev = [
@@ -37,10 +36,14 @@ dev = [
 build-backend = "flit_core.buildapi"
 requires = ["flit_core"]
 
+[tool.flit.sdist]
+include = ["app"]
+exclude = ["docker"]
+
 [project.urls]
-homepage = "example.com"
-documentation = "readthedocs.org"
-repository = "github.com"
+homepage = "https://example.com"
+documentation = "https://readthedocs.org"
+repository = "https://github.com"
 #changelog = "github.com/me/spam/blob/master/CHANGELOG.md"
 
 [project.scripts]
