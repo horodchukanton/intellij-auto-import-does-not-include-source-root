@@ -2,9 +2,9 @@
 
 import sys
 
-from app.lib.hello import HelloWorldPrinter
+# from app.lib.hello import HelloWorldPrinter
 
-# from lib.hello import HelloWorldPrinter
+from lib.hello import HelloWorldPrinter
 
 
 def main():
