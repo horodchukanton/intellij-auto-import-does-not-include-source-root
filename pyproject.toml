@@ -47,4 +47,4 @@ repository = "https://github.com"
 #changelog = "github.com/me/spam/blob/master/CHANGELOG.md"
 
 [project.scripts]
-app-cli = "app:main"
+app-cli = "app.main:main"
